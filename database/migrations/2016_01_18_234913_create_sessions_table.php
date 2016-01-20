@@ -22,6 +22,12 @@ class CreateSessionsTable extends Migration
             $table->string('interface', 30)->default('web');
             $table->integer('last_activity');
         });
+
+        Schema::create('limits', function (Blueprint $table) {
+            $table->string('ip_address', 45)->nullable();
+            $table->integer('count')->default(0);
+            $table->timestamp('created_at');
+        });
     }
 
     /**
@@ -31,6 +37,7 @@ class CreateSessionsTable extends Migration
      */
     public function down()
     {
+        Schema::drop('limits');
         Schema::drop('sessions');
     }
 }
