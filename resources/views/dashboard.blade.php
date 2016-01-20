@@ -12,7 +12,7 @@
             <div class="col-md-6">
 
                 <div class="profile-image">
-                    <img src="http://gurucul.com/wp-content/uploads/2015/01/default-user-icon-profile.png" class="img-circle circle-border m-b-md" alt="profile">
+                    <img src="/img/default-user-icon-profile.png" class="img-circle circle-border m-b-md" alt="profile">
                 </div>
                 <div class="profile-info">
                     <div class="">
