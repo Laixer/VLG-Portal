@@ -269,8 +269,10 @@ class AdminController extends Controller
         else
             $user->active = true;
 
-        if ($request->input('company'))
+        if ($request->input('company') > 0)
             $user->companies_id = $request->input('company');
+        else
+            $user->companies_id = null;
 
         $user->save();
 

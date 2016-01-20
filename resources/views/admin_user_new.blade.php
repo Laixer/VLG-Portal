@@ -23,7 +23,7 @@
                 <div class="ibox-content">
                     <form method="post" action="{{ url('/admin/user/new') }}" class="form-horizontal">
                         {!! csrf_field() !!}
-                        <div class="form-group {{ $errors->has('name') || $errors->has('last_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam</label>
+                        <div class="form-group {{ $errors->has('name') || $errors->has('last_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-4"><input type="text" class="form-control" name="name" placeholder="Voornaam">
                                 @if ($errors->has('name'))
                                 <span class="help-block m-b-none">{{ $errors->first('name') }}</span>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
+                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="email" name="email" class="form-control">
                                 @if ($errors->has('email'))
                                 <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
@@ -44,14 +44,14 @@
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Wachtwoord</label>
+                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Wachtwoord <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="password" name="password" class="form-control" name="password">
                                 @if ($errors->has('password'))
                                 <span class="help-block m-b-none">{{ $errors->first('password') }}</span>
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Bevestig</label>
+                        <div class="form-group {{ $errors->has('password_confirmation') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Bevestig <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="password" name="password_confirmation" class="form-control" name="password">
                                 @if ($errors->has('password_confirmation'))
                                 <span class="help-block m-b-none">{{ $errors->first('password_confirmation') }}</span>
@@ -62,7 +62,7 @@
                         <div class="form-group"><label class="col-sm-2 control-label">Telefoon</label>
                             <div class="col-sm-10"><input type="text" name="phone" placeholder="Telefoon" class="form-control"></div>
                         </div>
-                        <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Mobiel</label>
+                        <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Mobiel <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="text" name="mobile" placeholder="Mobiel" class="form-control">
                                 @if ($errors->has('mobile'))
                                 <span class="help-block m-b-none">{{ $errors->first('mobile') }}</span>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group {{ $errors->has('user_type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Gebruikersgroep</label>
+                        <div class="form-group {{ $errors->has('user_type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Gebruikersgroep <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10">
                                 <select class="form-control m-b" name="user_type">
                                     <option>Selecteer</option>
@@ -83,7 +83,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group {{ $errors->has('user_function') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Functie</label>
+                        <div class="form-group {{ $errors->has('user_function') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Functie <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10">
                                 <select class="form-control m-b" name="user_function">
                                     <option>Selecteer</option>

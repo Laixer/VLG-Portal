@@ -34,7 +34,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group {{ $errors->has('name') || $errors->has('last_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam</label>
+                                    <div class="form-group {{ $errors->has('name') || $errors->has('last_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam <span style="color: #C10000;">*</span></label>
                                         <div class="col-sm-4"><input type="text" class="form-control" name="name" value="{{ $user->name }}">
                                             @if ($errors->has('name'))
                                             <span class="help-block m-b-none">{{ $errors->first('name') }}</span>
@@ -46,7 +46,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
+                                    <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email <span style="color: #C10000;">*</span></label>
                                         <div class="col-sm-10"><input type="email" name="email" class="form-control" value="{{ $user->email }}">
                                             @if ($errors->has('email'))
                                             <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
@@ -63,7 +63,7 @@
                                     <div class="form-group"><label class="col-sm-2 control-label">Telefoon</label>
                                         <div class="col-sm-10"><input type="text" name="phone" value="{{ $user->phone }}" class="form-control"></div>
                                     </div>
-                                    <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Mobiel</label>
+                                    <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Mobiel <span style="color: #C10000;">*</span></label>
                                         <div class="col-sm-10"><input type="text" name="mobile" value="{{ $user->mobile }}" class="form-control">
                                             @if ($errors->has('mobile'))
                                             <span class="help-block m-b-none">{{ $errors->first('mobile') }}</span>
@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="hr-line-dashed"></div>
-                                    <div class="form-group {{ $errors->has('user_type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Gebruikersgroep</label>
+                                    <div class="form-group {{ $errors->has('user_type') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Gebruikersgroep <span style="color: #C10000;">*</span></label>
                                         <div class="col-sm-10">
                                             <select class="form-control m-b" name="user_type">
                                                 <option>Selecteer</option>
@@ -84,7 +84,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="form-group {{ $errors->has('user_function') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Functie</label>
+                                    <div class="form-group {{ $errors->has('user_function') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Functie <span style="color: #C10000;">*</span></label>
                                         <div class="col-sm-10">
                                             <select class="form-control m-b" name="user_function">
                                                 <option>Selecteer</option>
@@ -100,7 +100,7 @@
                                     <div class="form-group {{ $errors->has('company') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Organisatie</label>
                                         <div class="col-sm-10">
                                             <select class="form-control m-b" name="company">
-                                                <option>Selecteer</option>
+                                                <option value="-1">Selecteer</option>
                                                 @foreach(App\Company::all() as $company)
                                                 <option {{ $user->companies_id == $company->id ? 'selected' : '' }} value="{{ $company->id }}">{{ $company->name }}</option>
                                                 @endforeach

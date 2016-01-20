@@ -73,7 +73,7 @@
             @yield('content')
 
             <div class="footer">
-                <div class="pull-right">Version {{ config('app.appver') }}</div>
+                <div class="pull-right">Versie {{ config('app.appver') }}</div>
                 <div>
                     <strong>Copyright</strong> RotterdamPortal &copy; {{ date('Y') }}
                 </div>
