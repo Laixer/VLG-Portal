@@ -49,7 +49,7 @@
                                 </td>
                                 <td class="text-right">
                                     <div class="btn-group">
-                                        <a href="{{ url('admin/company/edit') . '?id=' . $company->id }}" class="btn-white btn btn-xs">Bewerk</a>
+                                        <a href="{{ url('admin/company/edit') . '?id=' . $company->id }}" class="btn-white btn btn-xs no-margins">Bewerk</a>
                                     </div>
                                 </td>
                             </tr>

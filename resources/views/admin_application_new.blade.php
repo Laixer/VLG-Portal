@@ -24,7 +24,7 @@
                     <form method="post" action="{{ url('/admin/application/new') }}" class="form-horizontal">
                         {!! csrf_field() !!}
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam</label>
-                            <div class="col-sm-10"><input type="text" class="form-control" name="name" placeholder="Applicatienaam">
+                            <div class="col-sm-10"><input type="text" class="form-control" name="name" placeholder="Applicatienaam" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                 <span class="help-block m-b-none">{{ $errors->first('name') }}</span>
                                 @endif
@@ -32,7 +32,7 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group {{ $errors->has('domain') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Domein</label>
-                            <div class="col-sm-10"><input type="text" name="domain" class="form-control" name="domain">
+                            <div class="col-sm-10"><input type="text" name="domain" class="form-control" name="domain" placeholder="Domein" value="{{ old('domain') }}">
                                 @if ($errors->has('domain'))
                                 <span class="help-block m-b-none">{{ $errors->first('domain') }}</span>
                                 @endif
@@ -40,7 +40,7 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">FontAwesome icon</label>
-                            <div class="col-sm-10"><input type="text" name="icon" placeholder="icon" value="fa-" class="form-control">
+                            <div class="col-sm-10"><input type="text" name="icon" placeholder="icon" value="fa-" class="form-control" value="{{ old('icon') }}">
                                 @if ($errors->has('icon'))
                                 <span class="help-block m-b-none">{{ $errors->first('icon') }}</span>
                                 @endif

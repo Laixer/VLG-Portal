@@ -47,7 +47,6 @@ class CreateUsersTable extends Migration
             $table->string('email', 120);
             $table->string('postbox', 8)->nullable();
             $table->string('phone', 15)->nullable();
-            $table->string('mobile', 15);
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

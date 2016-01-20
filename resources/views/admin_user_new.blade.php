@@ -24,12 +24,12 @@
                     <form method="post" action="{{ url('/admin/user/new') }}" class="form-horizontal">
                         {!! csrf_field() !!}
                         <div class="form-group {{ $errors->has('name') || $errors->has('last_name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam <span style="color: #C10000;">*</span></label>
-                            <div class="col-sm-4"><input type="text" class="form-control" name="name" placeholder="Voornaam">
+                            <div class="col-sm-4"><input type="text" class="form-control" name="name" placeholder="Voornaam" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                 <span class="help-block m-b-none">{{ $errors->first('name') }}</span>
                                 @endif
                             </div>
-                            <div class="col-sm-6"><input type="text" class="form-control" name="last_name" placeholder="Achternaam">
+                            <div class="col-sm-6"><input type="text" class="form-control" name="last_name" placeholder="Achternaam" value="{{ old('last_name') }}">
                                 @if ($errors->has('last_name'))
                                 <span class="help-block m-b-none">{{ $errors->first('last_name') }}</span>
                                 @endif
@@ -37,7 +37,7 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email <span style="color: #C10000;">*</span></label>
-                            <div class="col-sm-10"><input type="email" name="email" class="form-control">
+                            <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                 <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
                                 @endif
@@ -60,10 +60,10 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">Telefoon</label>
-                            <div class="col-sm-10"><input type="text" name="phone" placeholder="Telefoon" class="form-control"></div>
+                            <div class="col-sm-10"><input type="text" name="phone" placeholder="Telefoon" class="form-control" value="{{ old('phone') }}"></div>
                         </div>
                         <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Mobiel <span style="color: #C10000;">*</span></label>
-                            <div class="col-sm-10"><input type="text" name="mobile" placeholder="Mobiel" class="form-control">
+                            <div class="col-sm-10"><input type="text" name="mobile" placeholder="Mobiel" class="form-control" value="{{ old('mobile') }}">
                                 @if ($errors->has('mobile'))
                                 <span class="help-block m-b-none">{{ $errors->first('mobile') }}</span>
                                 @endif

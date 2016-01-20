@@ -101,13 +101,6 @@
                         <div class="form-group"><label class="col-sm-2 control-label">Telefoon</label>
                             <div class="col-sm-10"><input type="text" name="phone" value="{{ $company->phone }}" class="form-control"></div>
                         </div>
-                        <div class="form-group {{ $errors->has('mobile') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Mobiel</label>
-                            <div class="col-sm-10"><input type="text" name="mobile" value="{{ $company->mobile }}" class="form-control">
-                                @if ($errors->has('mobile'))
-                                <span class="help-block m-b-none">{{ $errors->first('mobile') }}</span>
-                                @endif
-                            </div>
-                        </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">Overig</label>
                             <div class="col-sm-10 checkbox-inline">

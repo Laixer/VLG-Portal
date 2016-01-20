@@ -53,7 +53,7 @@
                                 </td>
                                 <td class="text-right">
                                     <div class="btn-group">
-                                        <a href="{{ url('admin/user/edit') . '?id=' . $user->id }}" class="btn-white btn btn-xs">Bewerk</a>
+                                        <a href="{{ url('admin/user/edit') . '?id=' . $user->id }}" class="btn-white btn btn-xs no-margins">Bewerk</a>
                                     </div>
                                 </td>
                             </tr>

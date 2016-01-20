@@ -15,7 +15,7 @@
                 </div>
                 <div class="ibox-content">
 
-                    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="30">
                         <thead>
                             <tr>
 
@@ -45,7 +45,7 @@
                                         {!! csrf_field() !!}
                                         <input type="hidden" name="session" value="{{ $session->getId() }}" />
                                         <div class="btn-group">
-                                            <button class="btn-danger btn btn-xs">Verwijderen</button>
+                                            <button class="btn-danger btn btn-xs no-margins">Verwijderen</button>
                                         </div>
                                     </form>
                                 </td>

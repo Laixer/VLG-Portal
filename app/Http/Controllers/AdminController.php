@@ -23,7 +23,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth.admin');
     }
 
     /**
@@ -140,11 +140,14 @@ class AdminController extends Controller
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
+
         if ($request->input('phone'))
             $user->phone = $request->input('phone');
+
         $user->mobile = $request->input('mobile');
         $user->user_type_id = $request->input('user_type');
         $user->functions_id = $request->input('user_function');
+
         if (!$request->input('active'))
             $user->active = false;
 
@@ -268,10 +271,13 @@ class AdminController extends Controller
         $user->name = $request->input('name');
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
+
         if ($request->input('password'))
             $user->password = Hash::make($request->input('password'));
+
         if ($request->input('phone'))
             $user->phone = $request->input('phone');
+
         $user->mobile = $request->input('mobile');
         $user->user_type_id = $request->input('user_type');
         $user->functions_id = $request->input('user_function');
@@ -356,9 +362,8 @@ class AdminController extends Controller
             'post_address' => 'required',
             'post_address_number' => 'required',
             'post_postal' => 'required',
-            'website' => 'required',
+            'website' => 'required|url',
             'email' => 'required|email',
-            'mobile' => 'required',
         ]);
 
         $company = new Company;
@@ -383,7 +388,6 @@ class AdminController extends Controller
 
         $company->website = $request->input('website');
         $company->email = $request->input('email');
-        $company->mobile = $request->input('mobile');
 
         if (!$request->input('active'))
             $company->active = false;
@@ -411,9 +415,8 @@ class AdminController extends Controller
             'post_address' => 'required',
             'post_address_number' => 'required',
             'post_postal' => 'required',
-            'website' => 'required',
+            'website' => 'required|url',
             'email' => 'required|email',
-            'mobile' => 'required',
         ]);
 
         $company = Company::find($request->input('id'));
@@ -438,7 +441,6 @@ class AdminController extends Controller
 
         $company->website = $request->input('website');
         $company->email = $request->input('email');
-        $company->mobile = $request->input('mobile');
 
         if (!$request->input('active'))
             $company->active = false;

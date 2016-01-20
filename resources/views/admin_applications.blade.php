@@ -54,7 +54,7 @@
                                             {!! csrf_field() !!}
                                             <input type="hidden" name="application" value="{{ $application->id }}" />
                                             <div class="btn-group">
-                                                <button class="btn-danger btn btn-xs">Verwijderen</button>
+                                                <button class="btn-danger btn btn-xs no-margins">Verwijderen</button>
                                             </div>
                                         </form>
                                         @endif
