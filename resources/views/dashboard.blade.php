@@ -21,10 +21,6 @@
                                 {{ Auth::user()->formalName() }}
                             </h2>
                             <h4>{{ Auth::user()->type->name }}</h4>
-                            <!-- <small>
-                                There are many variations of passages of Lorem Ipsum available, but the majority
-                                have suffered alteration in some form Ipsum available.
-                            </small> -->
                         </div>
                     </div>
                 </div>

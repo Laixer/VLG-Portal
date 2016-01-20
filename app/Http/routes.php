@@ -31,7 +31,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/logout', 'HomeController@logout');
 
     Route::post('/account', 'HomeController@accountUpdate');
-
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
