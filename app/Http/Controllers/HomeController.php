@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use \Auth;
 use \Hash;
-use \Mail;
 use App\Http\Requests;
 use App\Audit;
 use Illuminate\Http\Request;
@@ -28,12 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-/*        Mail::send('auth.emails.password', [], function ($m) {
-            $m->from('no-reply@rotterdam-vlg.com', 'RotterdamPortal');
-
-            $m->to('yorick17@outlook.com', 'Woei')->subject('Your Reminder!');
-        });
-*/
         return view('dashboard');
     }
 

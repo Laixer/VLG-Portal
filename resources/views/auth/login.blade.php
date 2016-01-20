@@ -18,7 +18,7 @@
 
 <body class="gray-bg">
 
-    <div class="middle-box text-center loginscreen animated">
+    <div class="middle-box text-center loginscreen">
         <div>
             <div>
                 <h1 class="logo-name">VLG</h1>
@@ -56,7 +56,7 @@
 
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-                <a href="#"><small>Wachtwoord vergeten?</small></a>
+                <a href="{{ url('/auth/password/reset') }}"><small>Wachtwoord vergeten?</small></a>
 
             </form>
         </div>

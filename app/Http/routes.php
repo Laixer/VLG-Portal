@@ -22,6 +22,7 @@
 |
 */
 
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
@@ -29,6 +30,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/faq', 'HomeController@faq');
     Route::get('/account', 'HomeController@account');
     Route::get('/logout', 'HomeController@logout');
+
+    Route::get('/auth/password/reset/{token}', 'ResetController@passwordResetForm');
+    Route::post('/auth/password/reset/{token}', 'ResetController@doNewPassword');
+    Route::get('/auth/password/reset', 'ResetController@forgotPassword');
+    Route::post('/auth/password/reset', 'ResetController@sendResetMail');
 
     Route::post('/account', 'HomeController@accountUpdate');
 });
