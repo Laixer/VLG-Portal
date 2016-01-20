@@ -199,6 +199,18 @@ class AdminController extends Controller
      *
      * @return Response
      */
+    public function deleteFaq(Request $request)
+    {
+        Faq::destroy($request->input('id'));
+
+        return back()->with('success', 'Faq item verwijderd');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
     public function removeApplication(Request $request)
     {
         DB::table('application_user')->where('id', $request->get('id'))->delete();

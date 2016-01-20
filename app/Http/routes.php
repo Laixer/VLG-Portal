@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::post('/application/new', 'AdminController@AddNewApplication');
     Route::post('/application/delete', 'AdminController@deleteApplication');
 
+    Route::get('/faq/delete', 'AdminController@deleteFaq');
     Route::get('/users', 'AdminController@users');
     Route::get('/user/new', 'AdminController@newUser');
     Route::get('/user/edit', 'AdminController@editUser');

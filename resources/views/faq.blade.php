@@ -51,6 +51,11 @@
             <div class="col-md-7">
                 <a data-toggle="collapse" href="#faq{{ $faq->id }}" class="faq-question">{{ $faq->name }}</a>
             </div>
+            @if (Auth::user()->isAdmin())
+            <div class="col-md-5 text-right">
+                <a href="{{ url('/admin/faq/delete') . '?id=' . $faq->id }}" class="btn-danger btn btn-sm">Verwijderen</a>
+            </div>
+            @endif
         </div>
         <div class="row">
             <div class="col-lg-12">
