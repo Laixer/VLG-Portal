@@ -99,7 +99,7 @@ class ResetController extends Controller
 
         Mail::send('auth.emails.password', ['user' => $user, 'token' => $token], function ($message) use ($user) {
             $message->subject('Wachtwoord reset');
-            $message->from('no-reply@rotterdam-vlg.com', 'RotterdamPortal');
+            $message->from('no-reply@rotterdam-vlg.com', 'VLG Portal');
             $message->to($user->email, $user->formalName());
         });
 

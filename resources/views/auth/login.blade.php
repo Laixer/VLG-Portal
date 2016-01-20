@@ -23,7 +23,7 @@
             <div>
                 <h1 class="logo-name">VLG</h1>
             </div>
-            <h3>Rotterdam Portal</h3>
+            <h3>VLG Portal</h3>
 
             @if ($errors->has('email') || $errors->has('password'))
             <div class="alert alert-danger">
@@ -59,6 +59,7 @@
                 <a href="{{ url('/auth/password/reset') }}"><small>Wachtwoord vergeten?</small></a>
 
             </form>
+            <p class="m-t"> <small>Veldmeetdienst & Laboaratorium Groep &copy; {{ date('Y') }}</small> </p>
         </div>
     </div>
 
