@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Illuminate\Foundation\Validation\ValidationException;
+use Illuminate\Session\TokenMismatchException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -23,7 +24,6 @@ class Handler extends ExceptionHandler
         HttpException::class,
         ModelNotFoundException::class,
         ValidationException::class,
-        MethodNotAllowedHttpException::class,
     ];
 
     /**
@@ -50,6 +50,8 @@ class Handler extends ExceptionHandler
     {
         if ($e instanceof MethodNotAllowedHttpException) {
             abort(404);
+        } else if ($e instanceof TokenMismatchException) {
+            return back()->withErrors(['token' => 'Beveiligingsfout, probeer nogmaals']);
         }
 
         return parent::render($request, $e);

@@ -27,7 +27,7 @@ class Authenticate
 
         if (!Auth::user()->isActive()) {
             Auth::logout();
-            return redirect()->guest('login');
+            return redirect()->guest('login')->withErrors(['active' => 'Gebruikersnaam en wachtwoord ongeldig']);
         }
 
         return $next($request);

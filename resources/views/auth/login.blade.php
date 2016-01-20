@@ -29,6 +29,12 @@
             <div class="alert alert-danger">
                 Gebruikersnaam en wachtwoord ongeldig
             </div>
+            @elseif (count($errors) > 0)
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    {{ $error }}<br />
+                @endforeach
+            </div>
             @endif
 
             <form class="m-t" role="form" method="post" action="{{ url('/login') }}">
