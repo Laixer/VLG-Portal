@@ -25,6 +25,11 @@ class Authenticate
             }
         }
 
+        if (!Auth::user()->isActive()) {
+            Auth::logout();
+            return redirect()->guest('login');
+        }
+
         return $next($request);
     }
 }

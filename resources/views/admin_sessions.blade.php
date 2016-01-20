@@ -34,7 +34,7 @@
                             @foreach(App\Session::all() as $session)
                             <tr>
                                 <td>{{ $session->getId() }}</td>
-                                <td>{{ $session->user->formalName() }}</td>
+                                <td>{{ $session->user ? $session->user->formalName() : '-' }}</td>
                                 <td>{{ $session->user_agent }}</td>
                                 <td>{{ $session->interface }}</td>
                                 <td>{{ $session->ip_address }}</td>

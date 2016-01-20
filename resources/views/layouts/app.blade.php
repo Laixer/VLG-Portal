@@ -73,7 +73,7 @@
             @yield('content')
 
             <div class="footer">
-                <div class="pull-right">Version {{ env('VERSION', '') }}</div>
+                <div class="pull-right">Version {{ config('app.appver') }}</div>
                 <div>
                     <strong>Copyright</strong> RotterdamPortal &copy; {{ date('Y') }}
                 </div>
@@ -82,20 +82,20 @@
         </div>
     </div>
 
-    <!-- Mainly scripts -->
+    {{-- Mainly scripts --}}
     <script src="/js/jquery-2.1.1.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
+    {{-- Custom and plugin javascript --}}
     <script src="/js/inspinia.js"></script>
     <script src="/js/plugins/pace/pace.min.js"></script>
 
-    <!-- FooTable -->
+    {{-- FooTable --}}
     <script src="/js/plugins/footable/footable.all.min.js"></script>
 
-    <!-- iCheck -->
+    {{-- iCheck --}}
     <script src="/js/plugins/iCheck/icheck.min.js"></script>
 
     <script>
@@ -117,17 +117,11 @@
 
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
             });
 
             $('#loading-example-btn').click(function () {
                 btn = $(this);
                 simpleLoad(btn, true)
-
-                // Ajax example
-//                $.ajax().always(function () {
-//                    simpleLoad($(this), false)
-//                });
 
                 simpleLoad(btn, false)
             });
