@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Session;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,7 +25,15 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        // $schedule->command('inspire')->hourly();
+
+        // Remove old sessions
+        $schedule->call(function () {
+            foreach(Session::all() as $session) {
+                if ($session->isInvalid()) {
+                    $session->delete();
+                }
+            }
+        })->everyThirtyMinutes();
     }
 }

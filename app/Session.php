@@ -22,4 +22,18 @@ class Session extends Model
         return $this->hasOne('App\User', 'id', 'user_id');
     }
 
+    /**
+     * Get the phone record associated with the user.
+     */
+    public function isInvalid() {
+        if ($this->user) {
+            return false;
+        }
+
+        if ($this->last_activity + 900 < time()) {
+            return true;
+        }
+
+        return false;
+    }
 }
