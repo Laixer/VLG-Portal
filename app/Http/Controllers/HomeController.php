@@ -67,6 +67,10 @@ class HomeController extends Controller
      */
     public function company()
     {
+        if (!Auth::user()->company) {
+            return redirect('/');
+        }
+
         return view('company');
     }
 
