@@ -39,7 +39,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 80);
             $table->string('visit_address', 120)->nullable();
             $table->string('visit_address_number', 4)->nullable();
-            $table->string('visit_postal', 4)->nullable();
+            $table->string('visit_postal', 6)->nullable();
             $table->string('post_address', 120);
             $table->string('post_address_number', 4);
             $table->string('post_postal', 6);

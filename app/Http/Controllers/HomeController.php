@@ -51,6 +51,26 @@ class HomeController extends Controller
     }
 
     /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
+    public function log()
+    {
+        return view('log');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
+    public function company()
+    {
+        return view('company');
+    }
+
+    /**
      * Log the user out of the application
      *
      * @return Response

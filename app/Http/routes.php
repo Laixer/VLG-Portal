@@ -31,6 +31,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', 'HomeController@index');
     Route::get('/faq', 'HomeController@faq');
     Route::get('/account', 'HomeController@account');
+    Route::get('/log', 'HomeController@log');
+    Route::get('/company', 'HomeController@company');
 
     Route::get('/password/reset/{token}', 'ResetController@passwordResetForm');
     Route::post('/password/reset/{token}', 'ResetController@doNewPassword');

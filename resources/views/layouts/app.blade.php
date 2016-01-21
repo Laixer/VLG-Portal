@@ -36,8 +36,15 @@
                                 <a aria-expanded="false" role="button" href="{{ url('/') }}"> Dashboard</a>
                             </li>
 
-                            <li class="{{ $nav == 'account' ? 'active' : '' }}">
-                                <a aria-expanded="false" role="button" href="{{ url('/account') }}"> Account</a>
+                            <li class="dropdown {{ $nav == 'account' ? 'active' : '' }}">
+                                <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);"> Account <span class="caret"></span></a>
+                                <ul role="menu" class="dropdown-menu">
+                                    <li><a href="{{ url('/account') }}">Mijn Account</a></li>
+                                    @if(Auth::user()->company)
+                                    <li><a href="{{ url('/company') }}">Mijn Organisatie</a></li>
+                                    @endif
+                                    <li><a href="{{ url('/log') }}">Activiteitenlog</a></li>
+                                </ul>
                             </li>
 
                             @if (Auth::user()->isAdmin())

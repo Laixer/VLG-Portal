@@ -47,11 +47,8 @@
                     <input type="password" class="form-control" name="password" placeholder="Wachtwoord" required="">
                 </div>
 
-                <div class="form-group">
-                    <div class="i-checks text-left">
-                        <input type="checkbox" name="remember">
-                        <label> Gegevens onthouden</label>
-                    </div>
+                <div class="checkbox i-checks text-left">
+                    <label class="no-padding"> <input type="checkbox" name="remember"><i></i> Gegevens onthouden </label>
                 </div>
 
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
