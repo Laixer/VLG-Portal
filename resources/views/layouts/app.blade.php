@@ -85,11 +85,10 @@
     {{-- Mainly scripts --}}
     <script src="/js/jquery-2.1.1.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     {{-- Custom and plugin javascript --}}
-    <script src="/js/inspinia.js"></script>
+    <script src="/js/portal.js"></script>
     <script src="/js/plugins/pace/pace.min.js"></script>
 
     {{-- FooTable --}}
@@ -99,31 +98,12 @@
     <script src="/js/plugins/iCheck/icheck.min.js"></script>
 
     <script>
-        function simpleLoad(btn, state) {
-            if (state) {
-                btn.children().addClass('fa-spin');
-                btn.contents().last().replaceWith(" Loading");
-            } else {
-                setTimeout(function () {
-                    btn.children().removeClass('fa-spin');
-                    btn.contents().last().replaceWith(" Refresh");
-                }, 2000);
-            }
-        }
-
         $(document).ready(function() {
 
             $('.footable').footable();
 
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',
-            });
-
-            $('#loading-example-btn').click(function () {
-                btn = $(this);
-                simpleLoad(btn, true)
-
-                simpleLoad(btn, false)
             });
 
         });

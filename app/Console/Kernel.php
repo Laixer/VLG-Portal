@@ -25,8 +25,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
-
         // Remove old sessions
         $schedule->call(function () {
             foreach(Session::all() as $session) {
