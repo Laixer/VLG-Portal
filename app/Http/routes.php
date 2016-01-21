@@ -24,17 +24,18 @@
 
 
 Route::group(['middleware' => 'web'], function () {
-    Route::auth();
+    Route::get('login', 'AuthController@loginForm');
+    Route::post('login', 'AuthController@doLogin');
+    Route::get('logout', 'AuthController@logout');
 
     Route::get('/', 'HomeController@index');
     Route::get('/faq', 'HomeController@faq');
     Route::get('/account', 'HomeController@account');
-    Route::get('/logout', 'HomeController@logout');
 
-    Route::get('/auth/password/reset/{token}', 'ResetController@passwordResetForm');
-    Route::post('/auth/password/reset/{token}', 'ResetController@doNewPassword');
-    Route::get('/auth/password/reset', 'ResetController@forgotPassword');
-    Route::post('/auth/password/reset', 'ResetController@sendResetMail');
+    Route::get('/password/reset/{token}', 'ResetController@passwordResetForm');
+    Route::post('/password/reset/{token}', 'ResetController@doNewPassword');
+    Route::get('/password/reset', 'ResetController@forgotPassword');
+    Route::post('/password/reset', 'ResetController@sendResetMail');
 
     Route::post('/account', 'HomeController@accountUpdate');
 });

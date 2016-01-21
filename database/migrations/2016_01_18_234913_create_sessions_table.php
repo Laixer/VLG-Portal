@@ -23,10 +23,9 @@ class CreateSessionsTable extends Migration
             $table->integer('last_activity');
         });
 
-        Schema::create('limits', function (Blueprint $table) {
-            $table->string('ip_address', 45)->nullable();
-            $table->integer('count')->default(0);
-            $table->timestamp('created_at');
+        Schema::table('sessions', function ($table) {
+            $table->string('parent_id')->nullable();
+            $table->foreign('parent_id')->references('id')->on('sessions')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -37,7 +36,10 @@ class CreateSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('limits');
+        Schema::table('sessions', function ($table) {
+            $table->dropForeign('sessions_parent_id_foreign');
+        });
+
         Schema::drop('sessions');
     }
 }

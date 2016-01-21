@@ -56,7 +56,7 @@
 
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-                <a href="{{ url('/auth/password/reset') }}"><small>Wachtwoord vergeten?</small></a>
+                <a href="{{ url('/password/reset') }}"><small>Wachtwoord vergeten?</small></a>
 
             </form>
             <p class="m-t"> <small>Veldmeetdienst & Laboaratorium Groep &copy; {{ date('Y') }}</small> </p>

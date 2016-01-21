@@ -210,7 +210,9 @@
 		"/home/eve/portal/app/Http/Middleware",
 		"/home/eve/portal/config",
 		"/home/eve/portal/database",
+		"/home/eve/portal/database/migrations",
 		"/home/eve/portal/public",
+		"/home/eve/portal/public/css",
 		"/home/eve/portal/resources",
 		"/home/eve/portal/resources/views",
 		"/home/eve/portal/resources/views/auth",
@@ -219,21 +221,34 @@
 	],
 	"file_history":
 	[
-		"/home/eve/portal/resources/views/auth/reset.blade.php",
-		"/home/eve/portal/resources/views/auth/login.blade.php",
-		"/home/eve/portal/app/Http/Controllers/HomeController.php",
+		"/home/eve/portal/config/app.php",
+		"/home/eve/portal/resources/views/admin_applications.blade.php",
+		"/home/eve/portal/resources/views/admin_organisations.blade.php",
+		"/home/eve/portal/resources/views/admin_application_new.blade.php",
+		"/home/eve/portal/app/Http/Kernel.php",
+		"/home/eve/portal/app/Http/Controllers/AdminController.php",
+		"/home/eve/portal/resources/views/admin_users.blade.php",
+		"/home/eve/portal/resources/views/admin_sessions.blade.php",
+		"/home/eve/portal/resources/views/admin_user_new.blade.php",
+		"/home/eve/portal/resources/views/admin_organisation_new.blade.php",
+		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
+		"/home/eve/portal/database/migrations/2014_10_12_000000_create_users_table.php",
 		"/home/eve/portal/app/Http/routes.php",
+		"/home/eve/portal/resources/views/faq.blade.php",
+		"/home/eve/portal/resources/views/auth/login.blade.php",
 		"/home/eve/portal/app/Http/Controllers/ResetController.php",
+		"/home/eve/portal/database/migrations/2016_01_18_234913_create_sessions_table.php",
+		"/home/eve/portal/public/css/style.css",
+		"/home/eve/portal/resources/views/layouts/app.blade.php",
+		"/home/eve/portal/.gitignore",
+		"/home/eve/portal/resources/views/auth/reset.blade.php",
+		"/home/eve/portal/app/Http/Controllers/HomeController.php",
 		"/home/eve/portal/resources/views/auth/emails/password.blade.php",
 		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
-		"/home/eve/portal/app/Http/Controllers/AdminController.php",
 		"/home/eve/portal/resources/views/auth/forgot.blade.php",
 		"/home/eve/portal/database/migrations/2014_10_12_100000_create_password_resets_table.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-		"/home/eve/portal/resources/views/admin_user_new.blade.php",
 		"/home/eve/portal/resources/views/account.blade.php",
-		"/home/eve/portal/config/app.php",
-		"/home/eve/portal/resources/views/layouts/app.blade.php",
 		"/home/eve/portal/app/Http/Middleware/Authenticate.php",
 		"/home/eve/portal/app/Exceptions/Handler.php",
 		"/home/eve/portal/resources/views/dashboard.blade.php",
@@ -242,7 +257,6 @@
 		"/home/eve/portal/config/queue.php",
 		"/home/eve/portal/config/services.php",
 		"/home/eve/portal/config/session.php",
-		"/home/eve/portal/app/Http/Kernel.php",
 		"/home/eve/portal/public/robots.txt",
 		"/home/eve/portal/resources/views/errors/_500.blade.php",
 		"/home/eve/portal/resources/views/errors/503.blade.php",
@@ -254,27 +268,16 @@
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
 		"/home/eve/portal/config/mail.php",
 		"/home/eve/portal/composer.json",
-		"/home/eve/portal/resources/views/admin_sessions.blade.php",
-		"/home/eve/portal/.gitignore",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/make/routes.stub",
 		"/home/eve/GatewaySettings.bin",
 		"/home/eve/portal/app/Audit.php",
-		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
-		"/home/eve/portal/resources/views/admin_organisations.blade.php",
-		"/home/eve/portal/resources/views/admin_applications.blade.php",
 		"/home/eve/portal/app/Http/Middleware/Administrator.php",
 		"/home/eve/portal/database/seeds/StaticSeeder.php",
 		"/home/eve/portal/app/User.php",
-		"/home/eve/portal/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/home/eve/portal/resources/views/admin_users.blade.php",
-		"/home/eve/portal/resources/views/admin_application_new.blade.php",
-		"/home/eve/portal/resources/views/admin_organisation_new.blade.php",
 		"/home/eve/portal/public/theme/table_basic.html",
-		"/home/eve/portal/resources/views/faq.blade.php",
 		"/home/eve/portal/app/Application.php",
-		"/home/eve/portal/database/migrations/2016_01_18_234913_create_sessions_table.php",
 		"/home/eve/portal/app/Company.php",
 		"/home/eve/portal/app/Session.php",
 		"/home/eve/portal/public/theme/ecommerce_product_list.html",
@@ -345,8 +348,7 @@
 		"/home/eve/quantica/src/main.c",
 		"/home/eve/quantica/src/resolv.c",
 		"/home/eve/quantica/src/base.c",
-		"/home/eve/quantica/src/core.c",
-		"/home/eve/quantica/src/basecontrol.c"
+		"/home/eve/quantica/src/core.c"
 	],
 	"find":
 	{
@@ -357,6 +359,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"/home/eve/portal/app",
 			"/home/eve/portal/vendor",
 			"/home/eve/portal",
 			"/home/eve/quantica/src",
@@ -374,6 +377,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"margins",
+			" no-margins",
+			"#1ab394",
+			"RotterdamPortal",
 			"]->",
 			"password_resets",
 			"auth(",
@@ -497,11 +504,7 @@
 			"engine_index_list_get_element",
 			"engine_index_list_get_index",
 			"engine_index_list_insert",
-			"engine_tablelist",
-			"LIST_SIZE",
-			"engine_li",
-			"engine_list_insert",
-			"TODO"
+			"engine_tablelist"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -509,6 +512,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"#15af0d",
 			"struct _root_super",
 			"engine_t",
 			"struct _engine_table",
@@ -579,7 +583,7 @@
 	"project": "portal.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -617,7 +621,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 347.0,
+	"side_bar_width": 384.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
