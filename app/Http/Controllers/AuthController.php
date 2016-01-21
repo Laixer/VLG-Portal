@@ -111,7 +111,7 @@ class AuthController extends Controller
 
         Auth::logout();
 
-        return back();
+        return redirect('/login');
     }
 
     /**
