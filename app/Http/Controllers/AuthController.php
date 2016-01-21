@@ -40,7 +40,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'doLogout']);
     }
 
     /**
@@ -95,6 +95,23 @@ class AuthController extends Controller
         }
 
         return $this->sendFailedLoginResponse($request);
+    }
+
+    /**
+     * Log the user out of the application
+     *
+     * @return Response
+     */
+    public function doLogout()
+    {
+        $audit = new Audit;
+        $audit->payload = 'Logout';
+        $audit->user_id = Auth::user()->id;
+        $audit->save();
+
+        Auth::logout();
+
+        return back();
     }
 
     /**

@@ -71,23 +71,6 @@ class HomeController extends Controller
     }
 
     /**
-     * Log the user out of the application
-     *
-     * @return Response
-     */
-    public function logout()
-    {
-        $audit = new Audit;
-        $audit->payload = 'Uitgelogd';
-        $audit->user_id = Auth::user()->id;
-        $audit->save();
-
-        Auth::logout();
-
-        return back();
-    }
-
-    /**
      * Show the application dashboard.
      *
      * @return Response

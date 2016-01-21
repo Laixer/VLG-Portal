@@ -24,9 +24,9 @@
 
 
 Route::group(['middleware' => 'web'], function () {
-    Route::get('login', 'AuthController@loginForm');
-    Route::post('login', 'AuthController@doLogin');
-    Route::get('logout', 'AuthController@logout');
+    Route::get('/login', 'AuthController@loginForm');
+    Route::post('/login', 'AuthController@doLogin');
+    Route::get('/logout', 'AuthController@doLogout');
 
     Route::get('/', 'HomeController@index');
     Route::get('/faq', 'HomeController@faq');
