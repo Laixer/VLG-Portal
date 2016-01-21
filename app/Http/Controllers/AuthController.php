@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use \Auth;
 use App\User;
+use App\Audit;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -77,6 +78,12 @@ class AuthController extends Controller
         $credentials['active'] = true;
 
         if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
+
+            $audit = new Audit;
+            $audit->payload = 'Login';
+            $audit->user_id = Auth::id();
+            $audit->save();
+
             return $this->handleUserWasAuthenticated($request, $throttles);
         }
 

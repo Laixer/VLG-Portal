@@ -78,7 +78,7 @@ class HomeController extends Controller
     public function logout()
     {
         $audit = new Audit;
-        $audit->payload = 'Logout';
+        $audit->payload = 'Uitgelogd';
         $audit->user_id = Auth::user()->id;
         $audit->save();
 

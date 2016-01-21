@@ -51,6 +51,11 @@ class ResetController extends Controller
 
         $user->save();
 
+        $audit = new Audit;
+        $audit->payload = 'Nieuw wachtwoord via reset mail';
+        $audit->user_id = $user->id;
+        $audit->save();
+
         DB::table('password_resets')->where('email', $user->email)->delete();
 
         return redirect('/');
@@ -104,7 +109,7 @@ class ResetController extends Controller
         });
 
         $audit = new Audit;
-        $audit->payload = $user->formalName() . ' wachtwoord reset';
+        $audit->payload = 'Wachtwoord reset mail verstuurd';
         $audit->user_id = $user->id;
         $audit->save();
 

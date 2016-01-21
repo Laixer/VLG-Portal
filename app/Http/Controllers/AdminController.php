@@ -154,8 +154,8 @@ class AdminController extends Controller
         $user->save();
 
         $audit = new Audit;
-        $audit->payload = $user->name . ' aangemaakt door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Gebruiker "' . $user->name . '" aangemaakt';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Gebruiker is aangemaakt');
@@ -190,8 +190,8 @@ class AdminController extends Controller
         $user->applications()->save($application, $pivot);
 
         $audit = new Audit;
-        $audit->payload = $application->name . ' aangemaakt door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Applicatie "' . $application->name . '" aangemaakt';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Applicatie aan gebruiker toegevoegd');
@@ -219,8 +219,8 @@ class AdminController extends Controller
         DB::table('application_user')->where('id', $request->get('id'))->delete();
 
         $audit = new Audit;
-        $audit->payload = 'applicatierechten verwijderd door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Applicatierechten verwijderd';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Applicatie van gebruiker verwijderd');
@@ -243,8 +243,8 @@ class AdminController extends Controller
         $application->save();
 
         $audit = new Audit;
-        $audit->payload = $application->name . ' gedecativeerd';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Applicatie "' . $application->name . '" gedecativeerd';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Applicatie gedecativeerd');
@@ -295,8 +295,8 @@ class AdminController extends Controller
         $user->save();
 
         $audit = new Audit;
-        $audit->payload = $user->name . ' aangepast door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Gebruiker "' . $user->name . '" aangepast';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Instellingen opgeslagen');
@@ -322,8 +322,8 @@ class AdminController extends Controller
         $faq->save();
 
         $audit = new Audit;
-        $audit->payload = $faq->name . ' toegevoegd door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'FAQ item "' . $faq->name . '" toegevoegd';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back();
@@ -343,8 +343,8 @@ class AdminController extends Controller
         Session::destroy($request->input('session'));
 
         $audit = new Audit;
-        $audit->payload = $request->input('session') . ' verwijderd';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'SessieID "' . $request->input('session') . '" verwijderd';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back();
@@ -395,8 +395,8 @@ class AdminController extends Controller
         $company->save();
 
         $audit = new Audit;
-        $audit->payload = $company->name . ' toegevoegd door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Organisatie "' . $company->name . '" toegevoegd';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Organisatie is aangemaakt');
@@ -450,8 +450,8 @@ class AdminController extends Controller
         $company->save();
 
         $audit = new Audit;
-        $audit->payload = $company->name . ' aangepast door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Organisatie "' . $company->name . '" aangepast';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Organisatie aangepast');
@@ -483,8 +483,8 @@ class AdminController extends Controller
         $application->save();
 
         $audit = new Audit;
-        $audit->payload = $application->name . ' toegevoegd door admin';
-        $audit->user_id = Auth::user()->id;
+        $audit->payload = 'Applicatie "' . $application->name . '" toegevoegd';
+        $audit->user_id = Auth::id();
         $audit->save();
 
         return back()->with('success', 'Applicatie is aangemaakt');

@@ -45,13 +45,6 @@ $company_member_count = App\User::where('companies_id', $company->id)->count();
                     <dl class="dl-horizontal">
                         <dt>Email</dt> <dd> {{ $company->email }}</dd>
                         <dt>Website</dt> <dd><a href="{{ $company->website }}" class="text-navy"> {{ $company->website }}</a> </dd>
-                        <!-- <dt>Completed:</dt>
-                        <dd>
-                            <div class="progress progress-striped active m-b-sm">
-                                <div style="width: 60%;" class="progress-bar"></div>
-                            </div>
-                            <small>Project completed in <strong>60%</strong>. Remaining close the project, sign a contract and invoice.</small>
-                        </dd> -->
                     </dl>
                 </div>
             </div>
