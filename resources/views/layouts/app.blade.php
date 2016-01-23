@@ -55,6 +55,7 @@
                                     <li><a href="{{ url('/admin/companies') }}">Organisaties</a></li>
                                     <li><a href="{{ url('/admin/users') }}">Gebruikers</a></li>
                                     <li><a href="{{ url('/admin/sessions') }}">Sessies</a></li>
+                                    <li><a href="{{ url('/admin/log') }}">Logboek</a></li>
                                 </ul>
                             </li>
                             @endif

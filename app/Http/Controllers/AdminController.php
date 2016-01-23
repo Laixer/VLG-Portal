@@ -81,6 +81,16 @@ class AdminController extends Controller
      *
      * @return Response
      */
+    public function log()
+    {
+        return view('admin_log');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
     public function editUser(Request $request)
     {
         $user = User::find($request->get('id'));

@@ -26,7 +26,7 @@
                                 <tr>
                                     <th></th>
                                     <th>Applicatie </th>
-                                    <th>Domain </th>
+                                    <th>Endpoint </th>
                                     <th>Key</th>
                                     <th>Aangemaakt</th>
                                     <th>Actief</th>
