@@ -27,7 +27,7 @@
                                     <th></th>
                                     <th>Applicatie </th>
                                     <th>Endpoint </th>
-                                    <th>Key</th>
+                                    <th>Public Key</th>
                                     <th>Aangemaakt</th>
                                     <th>Actief</th>
                                     <th></th>
@@ -39,7 +39,7 @@
                                     <td><i class="fa {{ $application->icon }}"></i></td>
                                     <td>{{ $application->name }}</td>
                                     <td>{{ $application->domain }}</td>
-                                    <td>{{ $application->key }}</td>
+                                    <td>{{ $application->public_token }}</td>
                                     <td>{{ $application->created_at->format('d M Y') }}</td>
                                     <td>
                                         @if ($application->isActive())

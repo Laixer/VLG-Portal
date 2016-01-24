@@ -37,7 +37,7 @@
     <div class="row">
         @foreach(Auth::user()->applications()->get() as $application)
         <div class="col-lg-3">
-            <a href="https://{{ $application->domain }}">
+            <a href="{{ $application->getEndpointUrl() }}">
                 <div class="widget style1 {{ $application->color }}">
                     <div class="row">
                         <div class="col-xs-4">

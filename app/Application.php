@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Application extends Model
@@ -13,10 +14,14 @@ class Application extends Model
      */
     public function __construct()
     {
-        $this->key = sha1(mt_rand());
+        $this->public_token = sha1(mt_rand());
     }
 
     public function isActive() {
         return $this->active;
+    }
+
+    public function getEndpointUrl() {
+        return 'https://' . $this->domain . '/auth/jwtgssauth?token=' . Auth::user()->getToken();
     }
 }

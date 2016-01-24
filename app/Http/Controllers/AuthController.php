@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use \Auth;
 use App\User;
 use App\Audit;
+use App\Application;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -48,9 +49,53 @@ class AuthController extends Controller
      *
      * @return Response
      */
-    public function loginForm()
+    public function loginForm(Request $request)
     {
+        // ?endpoint=<domain>&token=<public_key>&timestamp=<time()>&auth=jwtgssauth
+        if ($request->session()->has('sso')) {
+            $request->session()->forget('sso');
+        }
+
+        if ($request->get('token') && $request->get('endpoint') && $request->get('timestamp') && $request->get('auth')) {
+            if ($request->get('timestamp') > (time()-900) && $request->get('timestamp') < time() && $request->get('auth') == 'jwtgssauth') {
+                $app = Application::where('public_token', $request->get('token'))->where('domain', $request->get('endpoint'))->first();
+                $request->session()->put('sso', $app);
+            }
+        }
+
         return view('auth.login');
+    }
+
+    /**
+     * Send the response after the user was authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  bool  $throttles
+     * @return \Illuminate\Http\Response
+     */
+    protected function handleRedirect(Request $request, $throttles)
+    {
+        if ($throttles) {
+            $this->clearLoginAttempts($request);
+        }
+
+        if (method_exists($this, 'authenticated')) {
+            return $this->authenticated($request, Auth::guard($this->getGuard())->user());
+        }
+
+        if ($request->session()->has('sso')) {
+            $endpoint = $request->session()->get('sso')->getEndpointUrl();
+
+            $audit = new Audit;
+            $audit->payload = 'SSO via ' . $request->session()->get('sso')->domain;
+            $audit->user_id = Auth::id();
+            $audit->save();
+
+            $request->session()->forget('sso');
+            return redirect($endpoint);
+        }
+
+        return redirect()->intended($this->redirectPath());
     }
 
     /**
@@ -84,7 +129,7 @@ class AuthController extends Controller
             $audit->user_id = Auth::id();
             $audit->save();
 
-            return $this->handleUserWasAuthenticated($request, $throttles);
+            return $this->handleRedirect($request, $throttles);
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts

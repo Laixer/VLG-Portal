@@ -82,6 +82,13 @@
                             @endif
                         </div>
                     </div>
+                    @if (Auth::user()->isAdmin())
+                    <div class="form-group"><label class="col-sm-2 control-label">SSO Token</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" readonly="" value="{{ Auth::user()->getToken() }}" />
+                        </div>
+                    </div>
+                    @endif
 
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">

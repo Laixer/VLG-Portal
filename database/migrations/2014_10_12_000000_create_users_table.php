@@ -30,7 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('icon', 16);
             $table->string('color', 20);
             $table->boolean('active')->default(1);
-            $table->string('key', 40);
+            $table->string('public_token', 40)->unique();
+            $table->string('private_token', 40)->unique();
             $table->timestamps();
         });
 

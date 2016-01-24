@@ -23,7 +23,7 @@
             <div>
                 <h1 class="logo-name">VLG</h1>
             </div>
-            <h3>VLG Portal</h3>
+            <h3>VLG Portal {{ session('sso') ? 'SSO' : '' }}</h3>
 
             @if ($errors->has('email') || $errors->has('password'))
             <div class="alert alert-danger">

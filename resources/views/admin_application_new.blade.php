@@ -38,6 +38,13 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group {{ $errors->has('private_token') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Secret key</label>
+                            <div class="col-sm-10"><input type="text" name="private_token" class="form-control" name="private_token" readonly="" value="{{ sha1(mt_rand()) }}">
+                                @if ($errors->has('private_token'))
+                                <span class="help-block m-b-none">{{ $errors->first('private_token') }}</span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">FontAwesome icon</label>
                             <div class="col-sm-10"><input type="text" name="icon" placeholder="icon" value="fa-" class="form-control" value="{{ old('icon') }}">

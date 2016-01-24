@@ -479,6 +479,7 @@ class AdminController extends Controller
             'domain' => 'required',
             'icon' => 'required',
             'color' => 'required',
+            'private_token' => 'required|size:40',
         ]);
 
         $application = new Application;
@@ -486,6 +487,7 @@ class AdminController extends Controller
         $application->domain = $request->input('domain');
         $application->icon = $request->input('icon');
         $application->color = $request->input('color');
+        $application->private_token = $request->input('private_token');
 
         if (!$request->input('active'))
             $application->active = false;

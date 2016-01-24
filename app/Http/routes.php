@@ -66,7 +66,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/application/new', 'AdminController@newApplication');
 });
 
-Route::group(['prefix' => 'api'], function () {
-    Route::get('/auth', 'ApiController@authenticate');
-    Route::get('/faq', 'ApiController@index');
+Route::group(['prefix' => 'api/endpoint', 'middleware' => 'jwt.auth'], function () {
+    Route::get('/refresh', 'EndpointController@getTokenRefresh');
+    Route::get('/user', 'EndpointController@getUser');
+    Route::get('/user_type', 'EndpointController@getUserType');
+    Route::get('/user_company', 'EndpointController@getUserCompany');
+    Route::get('/user_isadmin', 'EndpointController@getUserIsAdmin');
 });

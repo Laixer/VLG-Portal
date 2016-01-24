@@ -2,6 +2,8 @@
 
 namespace App;
 
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -23,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'note',
     ];
 
     /**
@@ -61,5 +63,9 @@ class User extends Authenticatable
 
     public function company() {
         return $this->hasOne('App\Company', 'id', 'companies_id');
+    }
+
+    public function getToken() {
+        return JWTAuth::fromUser($this);
     }
 }
