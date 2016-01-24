@@ -22,11 +22,6 @@ class CreateSessionsTable extends Migration
             $table->string('interface', 30)->default('web');
             $table->integer('last_activity');
         });
-
-        Schema::table('sessions', function ($table) {
-            $table->string('parent_id')->nullable();
-            $table->foreign('parent_id')->references('id')->on('sessions')->onUpdate('cascade')->onDelete('cascade');
-        });
     }
 
     /**
