@@ -22,7 +22,6 @@
 |
 */
 
-
 Route::group(['middleware' => 'web'], function () {
     Route::get('/login', 'AuthController@loginForm');
     Route::post('/login', 'AuthController@doLogin');
@@ -65,4 +64,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/sessions', 'AdminController@sessions');
     Route::get('/applications', 'AdminController@applications');
     Route::get('/application/new', 'AdminController@newApplication');
+});
+
+Route::group(['prefix' => 'api'], function () {
+    Route::get('/auth', 'ApiController@authenticate');
+    Route::get('/faq', 'ApiController@index');
 });

@@ -16,6 +16,10 @@ class Administrator
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        if (Auth::guard($guard)->guest()) {
+            return redirect('/login');
+        }
+
         if (!Auth::guard($guard)->user()->isAdmin()) {
             return redirect('/');
         }
