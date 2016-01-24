@@ -26,7 +26,8 @@ class StaticSeeder extends Seeder
 
         App\User::create([
             'name' => 'admin',
-        	'last_name' => 'portal',
+            'last_name' => 'portal',
+        	'mobile' => '000',
         	'email' => 'admin@portal.lan',
         	'password' => Hash::make('ABC@123'),
         	'functions_id' => $function_overig->id,
