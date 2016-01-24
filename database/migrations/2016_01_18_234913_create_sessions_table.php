@@ -31,10 +31,6 @@ class CreateSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('sessions', function ($table) {
-            $table->dropForeign('sessions_parent_id_foreign');
-        });
-
         Schema::drop('sessions');
     }
 }
