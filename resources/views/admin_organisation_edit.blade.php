@@ -111,6 +111,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button class="btn btn-primary" type="submit">Opslaan</button>
+                                <a href="{{ url('/admin/company/delete') . '?id=' . $company->id }}" class="btn btn-danger">Verwijderen</a>
                             </div>
                         </div>
                     </form>

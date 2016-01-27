@@ -248,16 +248,14 @@ class AdminController extends Controller
         ]);
 
         $application = Application::find($request->input('application'));
-        $application->active = false;
-
-        $application->save();
+        $application->delete();
 
         $audit = new Audit;
-        $audit->payload = 'Applicatie "' . $application->name . '" gedecativeerd';
+        $audit->payload = 'Applicatie "' . $application->name . '" verwijderd';
         $audit->user_id = Auth::id();
         $audit->save();
 
-        return back()->with('success', 'Applicatie gedecativeerd');
+        return back()->with('success', 'Applicatie verwijderd');
     }
 
     /**
@@ -466,6 +464,24 @@ class AdminController extends Controller
         $audit->save();
 
         return back()->with('success', 'Organisatie aangepast');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
+    public function deleteCompany(Request $request)
+    {
+        $company = Company::find($request->input('id'));
+        $company->delete();
+
+        $audit = new Audit;
+        $audit->payload = 'Organisatie "' . $company->name . '" verwijderd';
+        $audit->user_id = Auth::id();
+        $audit->save();
+
+        return redirect('/admin/companies')->with('success', 'Organisatie verwijderd');
     }
 
     /**

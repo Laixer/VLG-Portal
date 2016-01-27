@@ -61,6 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/companies', 'AdminController@companies');
     Route::get('/company/new', 'AdminController@newCompany');
     Route::get('/company/edit', 'AdminController@editCompany');
+    Route::get('/company/delete', 'AdminController@deleteCompany');
     Route::get('/sessions', 'AdminController@sessions');
     Route::get('/applications', 'AdminController@applications');
     Route::get('/application/new', 'AdminController@newApplication');

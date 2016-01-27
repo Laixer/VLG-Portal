@@ -1,4 +1,4 @@
-<?php $nav = 'account'; ?>
+<?php $nav = 'admin'; ?>
 
 @extends('layouts.app')
 
