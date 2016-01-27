@@ -24,8 +24,6 @@ class EndpointController extends Controller
                 return response()->json(['user_not_found'], 404);
             }
 
-        } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
-            return response()->json(['token_expired'], $e->getStatusCode());
         } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
             return response()->json(['token_invalid'], $e->getStatusCode());
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
@@ -69,6 +67,11 @@ class EndpointController extends Controller
         if (!$app) {
             return response()->json(['application_invalid']);
         }
+
+        $user_app = $user->applications()->where('applications.id', $app->id)->first();
+
+        $user['app_read'] =  ($user_app ? $user_app->pivot->read : 0);
+        $user['app_write'] = ($user_app ? $user_app->pivot->write : 0);
 
         return response()->json(compact('user'));
     }

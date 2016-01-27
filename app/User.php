@@ -39,7 +39,7 @@ class User extends Authenticatable
      * The roles that belong to the user.
      */
     public function applications() {
-        return $this->belongsToMany('App\Application')->withPivot('read', 'write');
+        return $this->belongsToMany('App\Application')->withPivot('id', 'read', 'write');
     }
 
     /**

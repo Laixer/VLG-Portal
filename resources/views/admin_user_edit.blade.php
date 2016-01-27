@@ -154,7 +154,7 @@
                                                         <div class="i-checks"><label> <input type="checkbox" {{ $application->pivot->write ? 'checked' : '' }}> <i></i> </label></div>
                                                     </td>
                                                     <td class="text-right">
-                                                        <a href="{{ url('/admin/user/application/remove') . '?id=' . $application->id }}" class="btn btn-white"><i class="fa fa-trash"></i> Verwijderen</a>
+                                                        <a href="{{ url('/admin/user/application/remove') . '?id=' . $application->pivot->id }}" class="btn btn-white"><i class="fa fa-trash"></i> Verwijderen</a>
                                                     </td>
                                                 </tr>
                                                 @endforeach
