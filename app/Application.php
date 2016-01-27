@@ -22,6 +22,6 @@ class Application extends Model
     }
 
     public function getEndpointUrl() {
-        return 'https://' . $this->domain . '/auth/jwtgssauth?token=' . Auth::user()->getToken();
+        return 'https://' . $this->domain . '/auth/callback?token=' . Auth::user()->getToken();
     }
 }

@@ -200,7 +200,7 @@ class AdminController extends Controller
         $user->applications()->save($application, $pivot);
 
         $audit = new Audit;
-        $audit->payload = 'Applicatie "' . $application->name . '" aangemaakt';
+        $audit->payload = 'Applicatie "' . $application->name . '" aan gebruiker toegevoegd';
         $audit->user_id = Auth::id();
         $audit->save();
 

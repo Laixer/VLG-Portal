@@ -51,13 +51,12 @@ class AuthController extends Controller
      */
     public function loginForm(Request $request)
     {
-        // ?endpoint=<domain>&token=<public_key>&timestamp=<time()>&auth=jwtgssauth
         if ($request->session()->has('sso')) {
             $request->session()->forget('sso');
         }
 
         if ($request->get('token') && $request->get('endpoint') && $request->get('timestamp') && $request->get('auth')) {
-            if ($request->get('timestamp') > (time()-900) && $request->get('timestamp') < time() && $request->get('auth') == 'jwtgssauth') {
+            if ($request->get('timestamp') > (time()-900) && $request->get('timestamp') < (time()+2) && $request->get('auth') == 'jwtgssauth') {
                 $app = Application::where('public_token', $request->get('token'))->where('domain', $request->get('endpoint'))->first();
                 $request->session()->put('sso', $app);
             }
@@ -110,9 +109,6 @@ class AuthController extends Controller
             $this->loginUsername() => 'required', 'password' => 'required',
         ]);
 
-        // If the class is using the ThrottlesLogins trait, we can automatically throttle
-        // the login attempts for this application. We'll key this by the username and
-        // the IP address of the client making these requests into this application.
         $throttles = $this->isUsingThrottlesLoginsTrait();
 
         if ($throttles && $this->hasTooManyLoginAttempts($request)) {
@@ -132,9 +128,6 @@ class AuthController extends Controller
             return $this->handleRedirect($request, $throttles);
         }
 
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
         if ($throttles) {
             $this->incrementLoginAttempts($request);
         }

@@ -15,7 +15,9 @@
                 </div>
                 <div class="ibox-content">
                     <div class="row">
-                        <div class="col-sm-9"></div>
+                        <div class="col-sm-9">
+                            <strong>Endpoint: {{ $_SERVER['SERVER_NAME'] }}</strong>
+                        </div>
                         <div class="col-sm-3 text-right">
                             <a href="{{ url('/admin/application/new') }}" class="btn btn-primary ">Nieuwe applicatie</a>
                         </div>
