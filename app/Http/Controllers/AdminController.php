@@ -176,6 +176,25 @@ class AdminController extends Controller
      *
      * @return Response
      */
+
+    public function deleteUser(Request $request)
+    {
+        $user = User::find($request->input('id'));
+        $user->delete();
+
+        $audit = new Audit;
+        $audit->payload = 'Gebruiker "' . $user->name . '" verwijderd';
+        $audit->user_id = Auth::id();
+        $audit->save();
+
+        return redirect('/admin/users')->with('success', 'Gebruiker verwijderd');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
     public function addApplication(Request $request)
     {
         $this->validate($request, [
