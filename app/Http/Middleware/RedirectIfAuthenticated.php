@@ -20,10 +20,6 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        if ($request->session()->has('sso')) {
-            $request->session()->forget('sso');
-        }
-
         if (Auth::guard($guard)->check()) {
             if ($request->get('token') && $request->get('endpoint') && $request->get('timestamp') && $request->get('auth')) {
                 if ($request->get('timestamp') > (time()-900) && $request->get('timestamp') < (time()+2) && $request->get('auth') == 'jwtgssauth') {
