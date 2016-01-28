@@ -60,6 +60,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/user/delete', 'AdminController@deleteUser');
     Route::get('/user/application/remove', 'AdminController@removeApplication');
     Route::get('/companies', 'AdminController@companies');
+    Route::get('/company', 'AdminController@companyOverview');
     Route::get('/company/new', 'AdminController@newCompany');
     Route::get('/company/edit', 'AdminController@editCompany');
     Route::get('/company/delete', 'AdminController@deleteCompany');

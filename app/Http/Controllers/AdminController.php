@@ -122,6 +122,17 @@ class AdminController extends Controller
      *
      * @return Response
      */
+    public function companyOverview(Request $request)
+    {
+        $company = Company::find($request->input('id'));
+        return view('admin_organisation_overview', ['company' => $company]);
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
     public function editCompany(Request $request)
     {
         $company = Company::find($request->get('id'));
