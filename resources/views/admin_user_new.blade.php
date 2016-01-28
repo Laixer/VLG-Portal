@@ -96,6 +96,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group {{ $errors->has('company') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Organisatie</label>
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="company">
+                                    <option value="-1">Selecteer</option>
+                                    @foreach(App\Company::all() as $company)
+                                    <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('company'))
+                                <span class="help-block m-b-none">{{ $errors->first('company') }}</span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">Overig</label>
                             <div class="col-sm-10 checkbox-inline">

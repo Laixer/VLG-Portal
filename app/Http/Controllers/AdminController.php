@@ -161,6 +161,11 @@ class AdminController extends Controller
         if (!$request->input('active'))
             $user->active = false;
 
+        if ($request->input('company') > 0)
+            $user->companies_id = $request->input('company');
+        else
+            $user->companies_id = null;
+
         $user->save();
 
         $audit = new Audit;
