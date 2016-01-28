@@ -176,7 +176,6 @@ class AdminController extends Controller
      *
      * @return Response
      */
-
     public function deleteUser(Request $request)
     {
         $user = User::find($request->input('id'));
