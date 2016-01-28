@@ -25,14 +25,16 @@ class RedirectIfAuthenticated
                 if ($request->get('timestamp') > (time()-900) && $request->get('timestamp') < (time()+2) && $request->get('auth') == 'jwtgssauth') {
                     $app = Application::where('public_token', $request->get('token'))->where('domain', $request->get('endpoint'))->first();
 
-                    $endpoint = $app->getEndpointUrl();
+                    if ($app) {
+                        $endpoint = $app->getEndpointUrl();
 
-                    $audit = new Audit;
-                    $audit->payload = 'SSO via ' . $app->domain;
-                    $audit->user_id = Auth::id();
-                    $audit->save();
+                        $audit = new Audit;
+                        $audit->payload = 'SSO via ' . $app->domain;
+                        $audit->user_id = Auth::id();
+                        $audit->save();
 
-                    return redirect($endpoint);
+                        return redirect($endpoint);
+                    }
                 }
             }
 
