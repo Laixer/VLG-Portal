@@ -136,7 +136,7 @@ class AdminController extends Controller
     public function AddNewUser(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|unique:users',
             'last_name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed|min:5',
