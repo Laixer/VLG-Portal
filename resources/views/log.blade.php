@@ -14,13 +14,14 @@
 
                     <div class="m-b-lg">
                         <strong>Activiteitenlog</strong>
+                        <small>Laatste 50 acties</small>
                     </div>
 
                     <div class="table-responsive">
                     <table class="table table-hover issue-tracker">
                         <tbody>
 
-                            @foreach(App\Audit::where('user_id', Auth::id())->orderBy('created_at', 'desc')->limit(25)->get() as $log)
+                            @foreach(App\Audit::where('user_id', Auth::id())->orderBy('created_at', 'desc')->limit(50)->get() as $log)
                             <tr>
                                 <td>
                                     <span class="label label-primary">Oke</span>

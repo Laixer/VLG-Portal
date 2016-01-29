@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'no-reply@rotterdam-vlg.com', 'name' => 'RotterdamPortal'],
+    'from' => ['address' => 'no-reply@rotterdam-vlg.com', 'name' => 'Rotterdam-VLG Portal'],
 
     /*
     |--------------------------------------------------------------------------
