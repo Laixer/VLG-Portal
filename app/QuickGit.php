@@ -6,11 +6,8 @@ class QuickGit {
 
     public static function version_short() {
         exec('git describe --always', $version_mini_hash);
-        exec('git rev-list HEAD | wc -l', $version_number);
 
-        $version = "v" . $version_mini_hash[0] . "." . trim($version_number[0]);
-
-        return $version;
+        return "v" . $version_mini_hash[0];
     }
 
     public static function version_full() {
