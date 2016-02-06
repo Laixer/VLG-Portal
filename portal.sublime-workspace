@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"un",
+				"unique"
+			],
+			[
 				"Au",
 				"Audit"
 			],
@@ -34,10 +38,6 @@
 			[
 				"ined",
 				"index_offset"
-			],
-			[
-				"un",
-				"unsigned"
 			],
 			[
 				"__b",
@@ -147,6 +147,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+			"settings":
+			{
+				"buffer_size": 4506,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -218,59 +226,70 @@
 		"/home/eve/portal/config",
 		"/home/eve/portal/database",
 		"/home/eve/portal/database/migrations",
-		"/home/eve/portal/public",
-		"/home/eve/portal/public/css",
 		"/home/eve/portal/resources",
 		"/home/eve/portal/resources/views",
-		"/home/eve/portal/resources/views/auth",
 		"/home/eve/portal/resources/views/layouts"
 	],
 	"file_history":
 	[
-		"/home/eve/portal/app/Http/Middleware/Administrator.php",
+		"/home/eve/portal/resources/views/layouts/app.blade.php",
+		"/home/eve/portal/storage/framework/views/fb4929c46606c872e1908f81b4d8b6f6edf0eee2.php",
+		"/home/eve/portal/resources/views/auth/emails/password.blade.php",
+		"/home/eve/portal/config/mail.php",
+		"/home/eve/portal/resources/views/log.blade.php",
+		"/home/eve/portal/resources/views/admin_application_new.blade.php",
 		"/home/eve/portal/config/app.php",
 		"/home/eve/portal/app/Http/routes.php",
-		"/home/eve/portal/resources/views/layouts/app.blade.php",
-		"/home/eve/portal/resources/views/admin_log.blade.php",
+		"/home/eve/portal/resources/views/admin_organisations.blade.php",
 		"/home/eve/portal/app/Http/Controllers/AdminController.php",
-		"/home/eve/portal/resources/views/admin_applications.blade.php",
-		"/home/eve/portal/resources/views/admin_application_new.blade.php",
+		"/home/eve/portal/resources/views/admin_users.blade.php",
+		"/home/eve/portal/resources/views/admin_organisation_overview.blade.php",
+		"/home/eve/portal/app/Company.php",
+		"/home/eve/portal/app/Http/Middleware/RedirectIfAuthenticated.php",
+		"/home/eve/portal/app/Exceptions/Handler.php",
+		"/home/eve/portal/resources/views/admin_user_new.blade.php",
+		"/home/eve/portal/app/User.php",
+		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
+		"/home/eve/portal/app/Http/Controllers/EndpointController.php",
+		"/home/eve/portal/app/Http/Kernel.php",
+		"/home/eve/portal/app/Application.php",
+		"/home/eve/portal/resources/views/admin_log.blade.php",
+		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
 		"/home/eve/portal/app/Http/Controllers/AuthController.php",
+		"/home/eve/portal/public/css/style.css",
+		"/home/eve/portal/.env",
+		"/home/eve/portal/resources/views/admin_applications.blade.php",
+		"/home/eve/portal/config/jwt.php",
+		"/home/eve/portal/resources/views/auth/login.blade.php",
+		"/home/eve/portal/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/home/eve/portal/database/migrations/2016_01_18_234913_create_sessions_table.php",
 		"/home/eve/portal/app/Http/Controllers/HomeController.php",
+		"/home/eve/portal/database/seeds/StaticSeeder.php",
+		"/home/eve/portal/vendor/tymon/jwt-auth/src/JWTAuth.php",
+		"/home/eve/portal/resources/views/account.blade.php",
+		"/home/eve/portal/resources/views/dashboard.blade.php",
+		"/home/eve/portal/vendor/symfony/routing/Matcher/RedirectableUrlMatcherInterface.php",
+		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
+		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php",
+		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php",
+		"/home/eve/portal/app/Http/Middleware/Administrator.php",
 		"/home/eve/portal/app/Http/Controllers/ResetController.php",
 		"/home/eve/portal/public/js/portal.js",
-		"/home/eve/portal/resources/views/log.blade.php",
-		"/home/eve/portal/resources/views/auth/login.blade.php",
 		"/home/eve/portal/resources/views/company.blade.php",
-		"/home/eve/portal/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/home/eve/portal/public/css/style.css",
 		"/home/eve/portal/app/Console/Kernel.php",
 		"/home/eve/portal/public/css/plugins/iCheck/custom.css",
 		"/home/eve/portal/public/js/inspinia.js",
 		"/home/eve/portal/resources/views/admin_sessions.blade.php",
 		"/home/eve/portal/app/Session.php",
-		"/home/eve/portal/database/migrations/2016_01_18_234913_create_sessions_table.php",
-		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
 		"/home/eve/portal/app/Http/Middleware/Authenticate.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
 		"/home/eve/portal/app/Http/Controllers/Auth/AuthController.php",
-		"/home/eve/portal/resources/views/auth/emails/password.blade.php",
-		"/home/eve/portal/resources/views/admin_organisations.blade.php",
-		"/home/eve/portal/app/Http/Kernel.php",
-		"/home/eve/portal/resources/views/admin_users.blade.php",
-		"/home/eve/portal/resources/views/admin_user_new.blade.php",
 		"/home/eve/portal/resources/views/admin_organisation_new.blade.php",
-		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
 		"/home/eve/portal/resources/views/faq.blade.php",
 		"/home/eve/portal/.gitignore",
 		"/home/eve/portal/resources/views/auth/reset.blade.php",
-		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
 		"/home/eve/portal/resources/views/auth/forgot.blade.php",
 		"/home/eve/portal/database/migrations/2014_10_12_100000_create_password_resets_table.php",
-		"/home/eve/portal/resources/views/account.blade.php",
-		"/home/eve/portal/app/Exceptions/Handler.php",
-		"/home/eve/portal/resources/views/dashboard.blade.php",
-		"/home/eve/portal/.env",
 		"/home/eve/portal/config/cache.php",
 		"/home/eve/portal/config/queue.php",
 		"/home/eve/portal/config/services.php",
@@ -283,18 +302,12 @@
 		"/home/eve/portal/vendor/symfony/http-kernel/Exception/HttpException.php",
 		"/home/eve/portal/vendor/symfony/debug/ExceptionHandler.php",
 		"/home/eve/portal/resources/views/auth/passwords/reset.blade.php",
-		"/home/eve/portal/config/mail.php",
 		"/home/eve/portal/composer.json",
-		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/make/routes.stub",
 		"/home/eve/GatewaySettings.bin",
 		"/home/eve/portal/app/Audit.php",
-		"/home/eve/portal/database/seeds/StaticSeeder.php",
-		"/home/eve/portal/app/User.php",
 		"/home/eve/portal/public/theme/table_basic.html",
-		"/home/eve/portal/app/Application.php",
-		"/home/eve/portal/app/Company.php",
 		"/home/eve/portal/public/theme/ecommerce_product_list.html",
 		"/home/eve/portal/app/Http/Session.php",
 		"/home/eve/portal/resources/views/login.blade.php",
@@ -307,7 +320,6 @@
 		"/home/eve/portal/public/Static_Full_Version/index.html",
 		"/home/eve/portal/database/migrations/2015_12_28_085313_user.php",
 		"/home/eve/portal/bootstrap/app.php",
-		"/home/eve/portal/config/jwt.php",
 		"/home/eve/portal/app/Helper.php",
 		"/home/eve/portal/app/Company",
 		"/home/eve/portal/database/seeds/FunctionSeeder.php",
@@ -347,14 +359,7 @@
 		"/home/eve/quantica/src/aes.c",
 		"/home/eve/quantica/src/slay_marshall.h",
 		"/home/eve/quantica/src/alias.h",
-		"/home/eve/quantica/src/engine.h",
-		"/home/eve/quantica/src/engine.c",
-		"/home/eve/quantica/TODO.md",
-		"/home/eve/quantica/test/test-engine.c",
-		"/home/eve/quantica/test/benchmark-engine.c",
-		"/home/eve/quantica/test/test-bootstrap.c",
-		"/home/eve/quantica/src/error.c",
-		"/home/eve/quantica/src/diagnose.h"
+		"/home/eve/quantica/src/engine.h"
 	],
 	"find":
 	{
@@ -365,6 +370,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"/home/eve/portal",
 			"/home/eve/portal/vendor",
 			"/home/eve/portal/app",
 			"/home/eve/portal/vendor",
@@ -384,6 +390,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"RotterdamPortal",
+			"id",
+			"ed5565",
+			"passw",
+			"private_token",
+			"());",
+			"RedirectsUsers",
+			"AuthenticatesUsers",
+			"AuthenticatesAndRegistersUsers",
 			"->id",
 			";\n",
 			"margin-l",
@@ -502,16 +517,7 @@
 			"struct engine",
 			"struct engine_dbsuper",
 			"struct engine_super",
-			"struct engine_table",
-			"engine_t",
-			"struct engine",
-			"alloc",
-			"engine",
-			"uint16_t",
-			"uint64_t",
-			"struct blob_info",
-			"alloc",
-			"engine_item"
+			"struct engine_table"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -538,8 +544,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4506,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4497,
+								4150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -586,6 +623,10 @@
 	{
 		"height": 0.0
 	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
 	"pinned_build_system": "",
 	"project": "portal.sublime-project",
 	"replace":
@@ -628,7 +669,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 424.0,
+	"side_bar_width": 372.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

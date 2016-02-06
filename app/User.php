@@ -61,6 +61,10 @@ class User extends Authenticatable
         return $this->active;
     }
 
+    public function session() {
+        return $this->hasOne('App\Session', 'user_id', 'id');
+    }
+
     public function company() {
         return $this->hasOne('App\Company', 'id', 'companies_id');
     }
