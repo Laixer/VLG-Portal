@@ -69,7 +69,11 @@ class User extends Authenticatable
         return $this->hasOne('App\Company', 'id', 'companies_id');
     }
 
-    public function getToken() {
+    public function getToken(Array $claim = []) {
+        if (count($claim) > 0)
+            return JWTAuth::fromUser($this, $claim);
+
         return JWTAuth::fromUser($this);
     }
+
 }
