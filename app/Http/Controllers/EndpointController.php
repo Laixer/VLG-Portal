@@ -248,11 +248,11 @@ class EndpointController extends Controller
             return response()->json(['unauthenticated']);
         }
 
-        if (!$user->isAdmin()) {
+        /*if (!$user->isAdmin()) {
             return response()->json(['permissions_invalid']);
-        }
+        }*/
 
-        $users = User::all();
+        $users = User::where('active',true)->get();
         return response()->json(compact('users'));
     }
 
@@ -285,11 +285,11 @@ class EndpointController extends Controller
             return response()->json(['unauthenticated']);
         }
 
-        if (!$user->isAdmin()) {
+        /*if (!$user->isAdmin()) {
             return response()->json(['permissions_invalid']);
-        }
+        }*/
 
-        $companies = Company::all();
+        $companies = Company::where('active',true)->get();
         return response()->json(compact('companies'));
     }
 

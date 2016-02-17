@@ -151,14 +151,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/QuickGit.php",
-			"settings":
-			{
-				"buffer_size": 548,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -223,6 +215,9 @@
 	[
 		"/home/eve/portal",
 		"/home/eve/portal/app",
+		"/home/eve/portal/app/Http",
+		"/home/eve/portal/app/Http/Controllers",
+		"/home/eve/portal/app/Http/Middleware",
 		"/home/eve/portal/config",
 		"/home/eve/portal/database",
 		"/home/eve/portal/database/migrations",
@@ -233,12 +228,16 @@
 	],
 	"file_history":
 	[
+		"/home/eve/portal/app/Http/Controllers/AuthController.php",
+		"/home/eve/portal/app/Application.php",
+		"/home/eve/portal/app/User.php",
+		"/home/eve/portal/resources/views/account.blade.php",
+		"/home/eve/portal/vendor/tymon/jwt-auth/src/JWTAuth.php",
 		"/home/eve/portal/app/QuickGit.php",
 		"/home/eve/portal/config/app.php",
 		"/home/eve/portal/resources/views/layouts/app.blade.php",
 		"/home/eve/portal/app/Http/routes.php",
 		"/home/eve/portal/app/Http/Controllers/EndpointController.php",
-		"/home/eve/portal/app/User.php",
 		"/home/eve/portal/storage/framework/views/fb4929c46606c872e1908f81b4d8b6f6edf0eee2.php",
 		"/home/eve/portal/resources/views/auth/emails/password.blade.php",
 		"/home/eve/portal/config/mail.php",
@@ -254,10 +253,8 @@
 		"/home/eve/portal/resources/views/admin_user_new.blade.php",
 		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
 		"/home/eve/portal/app/Http/Kernel.php",
-		"/home/eve/portal/app/Application.php",
 		"/home/eve/portal/resources/views/admin_log.blade.php",
 		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
-		"/home/eve/portal/app/Http/Controllers/AuthController.php",
 		"/home/eve/portal/public/css/style.css",
 		"/home/eve/portal/.env",
 		"/home/eve/portal/resources/views/admin_applications.blade.php",
@@ -267,8 +264,6 @@
 		"/home/eve/portal/database/migrations/2016_01_18_234913_create_sessions_table.php",
 		"/home/eve/portal/app/Http/Controllers/HomeController.php",
 		"/home/eve/portal/database/seeds/StaticSeeder.php",
-		"/home/eve/portal/vendor/tymon/jwt-auth/src/JWTAuth.php",
-		"/home/eve/portal/resources/views/account.blade.php",
 		"/home/eve/portal/resources/views/dashboard.blade.php",
 		"/home/eve/portal/vendor/symfony/routing/Matcher/RedirectableUrlMatcherInterface.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php",
@@ -545,39 +540,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/QuickGit.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 548,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								544,
-								544
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
