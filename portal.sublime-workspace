@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"appl",
+				"Application"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
 				"company",
 				"Company"
 			],
@@ -151,14 +159,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/Http/Controllers/EndpointController.php",
-			"settings":
-			{
-				"buffer_size": 9874,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -236,16 +236,17 @@
 	],
 	"file_history":
 	[
+		"/home/eve/portal/app/Http/Controllers/EndpointController.php",
+		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
+		"/home/eve/portal/app/User.php",
 		"/home/eve/portal/app/Http/Controllers/AuthController.php",
 		"/home/eve/portal/app/Application.php",
-		"/home/eve/portal/app/User.php",
 		"/home/eve/portal/resources/views/account.blade.php",
 		"/home/eve/portal/vendor/tymon/jwt-auth/src/JWTAuth.php",
 		"/home/eve/portal/app/QuickGit.php",
 		"/home/eve/portal/config/app.php",
 		"/home/eve/portal/resources/views/layouts/app.blade.php",
 		"/home/eve/portal/app/Http/routes.php",
-		"/home/eve/portal/app/Http/Controllers/EndpointController.php",
 		"/home/eve/portal/storage/framework/views/fb4929c46606c872e1908f81b4d8b6f6edf0eee2.php",
 		"/home/eve/portal/resources/views/auth/emails/password.blade.php",
 		"/home/eve/portal/config/mail.php",
@@ -259,7 +260,6 @@
 		"/home/eve/portal/app/Http/Middleware/RedirectIfAuthenticated.php",
 		"/home/eve/portal/app/Exceptions/Handler.php",
 		"/home/eve/portal/resources/views/admin_user_new.blade.php",
-		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
 		"/home/eve/portal/app/Http/Kernel.php",
 		"/home/eve/portal/resources/views/admin_log.blade.php",
 		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
@@ -548,39 +548,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/Http/Controllers/EndpointController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9874,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8509,
-								8509
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3907.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
