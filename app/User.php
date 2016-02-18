@@ -43,6 +43,18 @@ class User extends Authenticatable
     }
 
     /**
+     * The roles that belong to the user.
+     */
+    public function applicationsAvailable() {
+        $used = [];
+        foreach ($this->applications as $application) {
+            array_push($used, $application->id);
+        }
+        
+        return Application::whereNotIn('id', $used)->get();
+    }
+
+    /**
      * Get the phone record associated with the user.
      */
     public function userFunction() {

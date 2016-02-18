@@ -144,14 +144,14 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($user->applications()->get() as $application)
+                                                @foreach($user->applications as $application)
                                                 <tr>
                                                     <td style="vertical-align: middle">{{ $application->name }}</td>
                                                     <td style="vertical-align: middle">
-                                                        <div class="i-checks"><label> <input type="checkbox" {{ $application->pivot->read ? 'checked' : '' }}> <i></i> </label></div>
+                                                        <div class="i-checks"><label> <input type="checkbox" disabled {{ $application->pivot->read ? 'checked' : '' }}> <i></i> </label></div>
                                                     </td>
                                                     <td style="vertical-align: middle">
-                                                        <div class="i-checks"><label> <input type="checkbox" {{ $application->pivot->write ? 'checked' : '' }}> <i></i> </label></div>
+                                                        <div class="i-checks"><label> <input type="checkbox" disabled {{ $application->pivot->write ? 'checked' : '' }}> <i></i> </label></div>
                                                     </td>
                                                     <td class="text-right">
                                                         <a href="{{ url('/admin/user/application/remove') . '?id=' . $application->pivot->id }}" class="btn btn-white"><i class="fa fa-trash"></i> Verwijderen</a>
@@ -163,7 +163,7 @@
                                                     <td>
                                                         <select class="form-control" name="application">
                                                             <option selected>Selecteer</option>
-                                                            @foreach(App\Application::all() as $application)
+                                                            @foreach($user->applicationsAvailable() as $application)
                                                             <option value="{{ $application->id }}">{{ $application->name }}</option>
                                                             @endforeach
                                                         </select>
