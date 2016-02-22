@@ -78,4 +78,5 @@ Route::group(['prefix' => 'api/endpoint/v1', 'middleware' => 'jwt.auth'], functi
     Route::get('/faqs', 'EndpointController@getAllFaqs');
     Route::get('/users', 'EndpointController@getAllUsers');
     Route::get('/companies', 'EndpointController@getAllCompanies');
+    Route::get('/company/{id}/users', 'EndpointController@getAllCompanyUsers');
 });

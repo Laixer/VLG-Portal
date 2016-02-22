@@ -248,10 +248,6 @@ class EndpointController extends Controller
             return response()->json(['unauthenticated']);
         }
 
-        /*if (!$user->isAdmin()) {
-            return response()->json(['permissions_invalid']);
-        }*/
-
         $users = User::where('active',true)->get();
         return response()->json(compact('users'));
     }
@@ -285,12 +281,46 @@ class EndpointController extends Controller
             return response()->json(['unauthenticated']);
         }
 
-        /*if (!$user->isAdmin()) {
-            return response()->json(['permissions_invalid']);
-        }*/
-
         $companies = Company::where('active',true)->get();
         return response()->json(compact('companies'));
+    }
+
+    public function getAllCompanyUsers(Request $request, $id)
+    {
+        try {
+
+            if (!$user = JWTAuth::parseToken()->authenticate()) {
+                return response()->json(['user_not_found'], 404);
+            }
+
+        } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
+            return response()->json(['token_expired'], $e->getStatusCode());
+        } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+            return response()->json(['token_invalid'], $e->getStatusCode());
+        } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
+            return response()->json(['token_absent'], $e->getStatusCode());
+        }
+
+        if (!$request->get('privkey')) {
+            return response()->json(['application_invalid']);
+        }
+
+        $app = Application::where('private_token', $request->get('privkey'))->first();
+        if (!$app) {
+            return response()->json(['application_invalid']);
+        }
+
+        if (!$user->session) {
+            return response()->json(['unauthenticated']);
+        }
+
+        $company = Company::find($id);
+        if (!$company) {
+            return response()->json(['company_invalid']);
+        }
+
+        $users = $company->users;
+        return response()->json(compact('users'));
     }
 
 }
