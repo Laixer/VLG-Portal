@@ -149,7 +149,7 @@ class AdminController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:users',
             'last_name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|unique:users|email',
             'password' => 'required|confirmed|min:5',
             'mobile' => 'required',
             'user_type' => 'required|numeric',
