@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"paddin",
+				"padding-top"
+			],
+			[
 				"appl",
 				"Application"
 			],
@@ -159,6 +163,23 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "- email unique per user\n- fix checkboxes",
+			"settings":
+			{
+				"buffer_size": 40,
+				"line_ending": "Unix",
+				"name": "- email unique per user"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/AdminController.php",
+			"settings":
+			{
+				"buffer_size": 14903,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -232,12 +253,20 @@
 		"/home/eve/portal/database/seeds",
 		"/home/eve/portal/resources",
 		"/home/eve/portal/resources/views",
+		"/home/eve/portal/resources/views/auth",
 		"/home/eve/portal/resources/views/layouts"
 	],
 	"file_history":
 	[
-		"/home/eve/portal/app/Http/Controllers/EndpointController.php",
+		"/home/eve/portal/resources/views/auth/login.blade.php",
+		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
+		"/home/eve/portal/resources/views/admin_user_new.blade.php",
 		"/home/eve/portal/resources/views/admin_user_edit.blade.php",
+		"/home/eve/portal/resources/views/admin_organisation_new.blade.php",
+		"/home/eve/portal/resources/views/admin_application_new.blade.php",
+		"/home/eve/portal/app/Http/Controllers/EndpointController.php",
+		"/home/eve/portal/app/Http/routes.php",
+		"/home/eve/portal/config/mail.php",
 		"/home/eve/portal/app/User.php",
 		"/home/eve/portal/app/Http/Controllers/AuthController.php",
 		"/home/eve/portal/app/Application.php",
@@ -246,12 +275,9 @@
 		"/home/eve/portal/app/QuickGit.php",
 		"/home/eve/portal/config/app.php",
 		"/home/eve/portal/resources/views/layouts/app.blade.php",
-		"/home/eve/portal/app/Http/routes.php",
 		"/home/eve/portal/storage/framework/views/fb4929c46606c872e1908f81b4d8b6f6edf0eee2.php",
 		"/home/eve/portal/resources/views/auth/emails/password.blade.php",
-		"/home/eve/portal/config/mail.php",
 		"/home/eve/portal/resources/views/log.blade.php",
-		"/home/eve/portal/resources/views/admin_application_new.blade.php",
 		"/home/eve/portal/resources/views/admin_organisations.blade.php",
 		"/home/eve/portal/app/Http/Controllers/AdminController.php",
 		"/home/eve/portal/resources/views/admin_users.blade.php",
@@ -259,15 +285,12 @@
 		"/home/eve/portal/app/Company.php",
 		"/home/eve/portal/app/Http/Middleware/RedirectIfAuthenticated.php",
 		"/home/eve/portal/app/Exceptions/Handler.php",
-		"/home/eve/portal/resources/views/admin_user_new.blade.php",
 		"/home/eve/portal/app/Http/Kernel.php",
 		"/home/eve/portal/resources/views/admin_log.blade.php",
-		"/home/eve/portal/resources/views/admin_organisation_edit.blade.php",
 		"/home/eve/portal/public/css/style.css",
 		"/home/eve/portal/.env",
 		"/home/eve/portal/resources/views/admin_applications.blade.php",
 		"/home/eve/portal/config/jwt.php",
-		"/home/eve/portal/resources/views/auth/login.blade.php",
 		"/home/eve/portal/database/migrations/2014_10_12_000000_create_users_table.php",
 		"/home/eve/portal/database/migrations/2016_01_18_234913_create_sessions_table.php",
 		"/home/eve/portal/app/Http/Controllers/HomeController.php",
@@ -289,7 +312,6 @@
 		"/home/eve/portal/app/Http/Middleware/Authenticate.php",
 		"/home/eve/portal/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
 		"/home/eve/portal/app/Http/Controllers/Auth/AuthController.php",
-		"/home/eve/portal/resources/views/admin_organisation_new.blade.php",
 		"/home/eve/portal/resources/views/faq.blade.php",
 		"/home/eve/portal/.gitignore",
 		"/home/eve/portal/resources/views/auth/reset.blade.php",
@@ -548,8 +570,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"auto_name": "- email unique per user",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/AdminController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2935,
+								2935
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1320.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
