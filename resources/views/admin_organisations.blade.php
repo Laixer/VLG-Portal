@@ -16,11 +16,13 @@
                 <div class="ibox-content">
 
                     <div class="row">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="Zoek in organisaties">
-                        </div>
-                        <div class="col-sm-2 text-right">
-                            <a href="{{ url('/admin/company/new') }}" class="btn btn-primary ">Nieuwe organisatie</a>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="filter" placeholder="Zoek in organisaties">
+                                <span class="input-group-btn">
+                                    <a href="{{ url('/admin/company/new') }}" class="btn btn-primary ">Nieuwe organisatie</a>
+                                </span>
+                            </div>
                         </div>
                     </div>
 

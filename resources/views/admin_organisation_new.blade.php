@@ -23,7 +23,7 @@
                 <div class="ibox-content">
                     <form method="post" action="{{ url('/admin/company/new') }}" class="form-horizontal">
                         {!! csrf_field() !!}
-                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam</label>
+                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="text" class="form-control" name="name" placeholder="Naam" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                 <span class="help-block m-b-none">{{ $errors->first('name') }}</span>
@@ -31,14 +31,14 @@
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email</label>
+                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Email <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                 <span class="help-block m-b-none">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group {{ $errors->has('website') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Website</label>
+                        <div class="form-group {{ $errors->has('website') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Website <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="text" name="website" class="form-control" placeholder="Website" value="{{ old('website') }}">
                                 @if ($errors->has('website'))
                                 <span class="help-block m-b-none">{{ $errors->first('website') }}</span>
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group {{ $errors->has('post_address') || $errors->has('post_address_number') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Postadres</label>
+                        <div class="form-group {{ $errors->has('post_address') || $errors->has('post_address_number') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Postadres <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-8"><input type="text" name="post_address" class="form-control" placeholder="Adres" value="{{ old('post_address') }}">
                                 @if ($errors->has('post_address'))
                                 <span class="help-block m-b-none">{{ $errors->first('post_address') }}</span>
@@ -80,7 +80,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group {{ $errors->has('post_postal') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Postcode</label>
+                        <div class="form-group {{ $errors->has('post_postal') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Postcode <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="text" name="post_postal" class="form-control" placeholder="Postcode" value="{{ old('post_postal') }}">
                                 @if ($errors->has('post_postal'))
                                 <span class="help-block m-b-none">{{ $errors->first('post_postal') }}</span>

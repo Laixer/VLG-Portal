@@ -23,7 +23,7 @@
                 <div class="ibox-content">
                     <form method="post" action="{{ url('/admin/application/new') }}" class="form-horizontal">
                         {!! csrf_field() !!}
-                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam</label>
+                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Naam <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="text" class="form-control" name="name" placeholder="Applicatienaam" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                 <span class="help-block m-b-none">{{ $errors->first('name') }}</span>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group {{ $errors->has('domain') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Domein endpoint (FQDN)</label>
+                        <div class="form-group {{ $errors->has('domain') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Domein endpoint (FQDN) <span style="color: #C10000;">*</span></label>
                             <div class="col-sm-10"><input type="text" name="domain" class="form-control" name="domain" placeholder="Domein endpoint" value="{{ old('domain') }}">
                                 @if ($errors->has('domain'))
                                 <span class="help-block m-b-none">{{ $errors->first('domain') }}</span>
