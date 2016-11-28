@@ -43,7 +43,7 @@ class ResetController extends Controller
     {
         $this->validate($request, [
             'id' => 'required',
-            'password' => 'required|confirmed',
+            'password' => 'required|confirmed|min:5',
         ]);
 
         $user = User::find($request->input('id'));
@@ -58,7 +58,7 @@ class ResetController extends Controller
 
         DB::table('password_resets')->where('email', $user->email)->delete();
 
-        return redirect('/');
+        return redirect('/login')->with('success', 'Nieuw wachtwoord ingesteld');
     }
 
     /**
@@ -69,7 +69,7 @@ class ResetController extends Controller
     public function passwordResetForm(Request $request, $token)
     {
     	$users = DB::table('password_resets')->select('email')->where('token', $token)->get();
-    	if (!$users) {
+    	if (count($users) < 1) {
     		return redirect('/');
     	}
 
@@ -94,7 +94,6 @@ class ResetController extends Controller
         	return back()->with('success', 'Wachtwoord reset email verstuurd');
         }
 
-        $user->password = 'RESET';
         $user->save();
 
         $token = md5(mt_rand());

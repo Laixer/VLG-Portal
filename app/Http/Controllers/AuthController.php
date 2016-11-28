@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \Auth;
+use \DB;
 use App\User;
 use App\Audit;
 use App\Application;
@@ -116,6 +117,8 @@ class AuthController extends Controller
             $audit->payload = 'Login';
             $audit->user_id = Auth::id();
             $audit->save();
+
+            DB::table('password_resets')->where('email', Auth::user()->email)->delete();
 
             return $this->handleRedirect($request);
         }

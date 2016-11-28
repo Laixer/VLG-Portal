@@ -25,6 +25,12 @@
             </div>
             <h3>VLG Portal</h3>
 
+            @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+            @endif
+
             @if ($errors->has('email') || $errors->has('password'))
             <div class="alert alert-danger">
                 Gebruikersnaam en wachtwoord ongeldig

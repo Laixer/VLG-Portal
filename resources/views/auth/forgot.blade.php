@@ -37,7 +37,7 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <form class="m-t" role="form" method="post" action="{{ url('/auth/password/reset') }}">
+                            <form class="m-t" role="form" method="post" action="{{ url('/password/reset') }}">
                                 {!! csrf_field() !!}
 
                                 <div class="form-group">
