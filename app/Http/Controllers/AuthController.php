@@ -54,10 +54,15 @@ class AuthController extends Controller
             $request->session()->forget('sso');
         }
 
-        if ($request->get('token') && $request->get('endpoint') && $request->get('timestamp') && $request->get('auth')) {
+        if ($request->get('token')
+                && $request->get('endpoint')
+                && $request->get('timestamp')
+                && $request->get('auth')) {
             if ($request->get('timestamp') > (time()-900) && $request->get('timestamp') < (time()+2) && $request->get('auth') == 'jwtgssauth') {
                 $app = Application::where('public_token', $request->get('token'))->where('domain', $request->get('endpoint'))->first();
-                $request->session()->put('sso', $app);
+                if ($app) {
+                    $request->session()->put('sso', $app);
+                }
             }
         }
 

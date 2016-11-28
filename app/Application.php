@@ -22,6 +22,11 @@ class Application extends Model
     }
 
     public function getEndpointUrl() {
-        return 'https://' . $this->domain . '/auth/callback?token=' . Auth::user()->getToken(['app' => $this->domain, 'pub' => $this->public_token]);
+        $scheme = 'https://';
+        if (config('app.debug')) {
+            $scheme = 'http://';
+        }
+
+        return $scheme . $this->domain . '/auth/callback?token=' . Auth::user()->getToken(['app' => $this->domain, 'pub' => $this->public_token]);
     }
 }

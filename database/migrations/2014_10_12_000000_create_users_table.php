@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name', 80);
             $table->string('domain', 120);
-            $table->string('icon', 16);
+            $table->string('icon', 32);
             $table->string('color', 20);
             $table->boolean('active')->default(1);
             $table->string('public_token', 40)->unique();
