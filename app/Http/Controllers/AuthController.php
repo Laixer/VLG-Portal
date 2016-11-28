@@ -9,23 +9,22 @@ use App\Application;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class AuthController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Registration & Login Controller
+    | Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login / registration.
@@ -72,16 +71,8 @@ class AuthController extends Controller
      * @param  bool  $throttles
      * @return \Illuminate\Http\Response
      */
-    protected function handleRedirect(Request $request, $throttles)
+    protected function handleRedirect(Request $request, $throttles = null)
     {
-        if ($throttles) {
-            $this->clearLoginAttempts($request);
-        }
-
-        if (method_exists($this, 'authenticated')) {
-            return $this->authenticated($request, Auth::guard($this->getGuard())->user());
-        }
-
         if ($request->session()->has('sso')) {
             $endpoint = $request->session()->get('sso')->getEndpointUrl();
 
@@ -106,30 +97,22 @@ class AuthController extends Controller
     public function doLogin(Request $request)
     {
         $this->validate($request, [
-            $this->loginUsername() => 'required', 'password' => 'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
 
-        $throttles = $this->isUsingThrottlesLoginsTrait();
-
-        if ($throttles && $this->hasTooManyLoginAttempts($request)) {
-            return $this->sendLockoutResponse($request);
-        }
-
-        $credentials = $this->getCredentials($request);
+        $credentials['email'] = $request->get('email');
+        $credentials['password'] = $request->get('password');
         $credentials['active'] = true;
 
-        if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
+        if (Auth::attempt($credentials, $request->has('remember'))) {
 
             $audit = new Audit;
             $audit->payload = 'Login';
             $audit->user_id = Auth::id();
             $audit->save();
 
-            return $this->handleRedirect($request, $throttles);
-        }
-
-        if ($throttles) {
-            $this->incrementLoginAttempts($request);
+            return $this->handleRedirect($request);
         }
 
         return $this->sendFailedLoginResponse($request);
