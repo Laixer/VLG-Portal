@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use \DB;
 use App\Session;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -33,6 +34,11 @@ class Kernel extends ConsoleKernel
                 }
             }
         })->everyTenMinutes();
+
+        // Remove expired reset tokens
+        $schedule->call(function () {
+            DB::table('password_resets')->whereRaw('created_at < DATE_SUB(NOW(), INTERVAL 1 HOUR)')->delete();
+        })->hourly();
     }
 
     /**
