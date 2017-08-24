@@ -32,7 +32,7 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group {{ $errors->has('domain') ? ' has-error' : '' }}"><label class="col-sm-2 control-label">Domein endpoint (FQDN) <span style="color: #C10000;">*</span></label>
-                            <div class="col-sm-10"><input type="text" name="domain" class="form-control" name="domain" placeholder="Domein endpoint" value="{{ old('domain') }}">
+                            <div class="col-sm-10"><input type="text" name="domain" class="form-control" name="domain" placeholder="myapp.domain.org" value="{{ old('domain') }}">
                                 @if ($errors->has('domain'))
                                 <span class="help-block m-b-none">{{ $errors->first('domain') }}</span>
                                 @endif
